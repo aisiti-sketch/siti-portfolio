@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 17px 0 0;
+            background-color: #f5f7f8;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #555;
+        }
+
+        .container {
+            width: 800px;
+            max-width: 100%;
+            min-height: 850px;
+            margin: 0 auto;
+            padding: 32px;
+            background-color: #557f8e;
+        }
+
+        .form-box {
+            width: 100%;
+            background-color: #fff;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+        }
+
+        .form-header {
+            height: 85px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eceff1;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .form-header h1 {
+            margin: 0;
+            color: #666;
+            font-size: 34px;
+            font-weight: bold;
+        }
+
+        .form-body {
+            padding: 34px 45px 37px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .form-group > label {
+            margin: 0;
+            color: #20b99b;
+            font-size: 18px;
+            line-height: 22px;
+            font-weight: bold;
+        }
+
+        .form-group input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="file"]),
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            min-width: 0;
+            padding: 8px 11px;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        .form-group input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="file"]),
+        .form-group select {
+            height: 39px;
+        }
+
+        .form-group input::placeholder {
+            color: #d2d2d2;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #20b99b;
+        }
+
+        .full-width {
+            margin-bottom: 22px;
+        }
+
+        .options {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 5px;
+            min-height: 27px;
+        }
+
+        .option {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 17px;
+            line-height: 22px;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .option input[type="radio"],
+        .option input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            accent-color: #20b99b;
+        }
+
+        .income-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            height: 39px;
+        }
+
+        .income-control input[type="range"] {
+            flex: 1;
+            width: 100%;
+            min-width: 0;
+            margin: 0;
+            accent-color: #20b99b;
+            cursor: pointer;
+        }
+
+        #incomeValue {
+            display: inline-block;
+            padding: 7px 6px;
+            border-radius: 5px;
+            background-color: #20b99b;
+            color: white;
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .form-group input[type="file"] {
+            width: 100%;
+            min-width: 0;
+            height: 26px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .form-group textarea {
+            height: 97px;
+            resize: both;
+        }
+
+        .form-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 12px 45px;
+            background-color: #eceff1;
+            border-top: 1px solid #ccc;
+        }
+
+        .form-footer button {
+            min-width: 106px;
+            height: 44px;
+            padding: 8px 23px;
+            border: none;
+            border-radius: 6px 6px 0 0;
+            background-color: #20b99b;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .form-footer button:hover {
+            background-color: #169c83;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding-top: 0;
+            }
+
+            .container {
+                width: 100%;
+                padding: 14px;
+            }
+
+            .form-header {
+                height: 75px;
+            }
+
+            .form-header h1 {
+                font-size: 28px;
+            }
+
+            .form-body {
+                padding: 25px 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                margin-bottom: 22px;
+            }
+
+            .options {
+                flex-wrap: wrap;
+            }
+
+            .form-footer {
+                padding: 12px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form class="form-box" id="accountForm">
+
+            <div class="form-header">
+                <h1>Create Account</h1>
+            </div>
+
+            <div class="form-body">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First name *</label>
+                        <input type="text" id="firstName"
+                               placeholder="enter your first name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last name</label>
+                        <input type="text" id="lastName"
+                               placeholder="enter your last name">
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email"
+                           placeholder="enter your email" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password"
+                               placeholder="enter your password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword"
+                               placeholder="enter your password again" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Gender:</label>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="gender" value="Male">
+                                Male
+                            </label>
+
+                            <label class="option">
+                                <input type="radio" name="gender" value="Female">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Hobbies</label>
+                        <div class="options">
+                            <label class="option">
+                                <input type="checkbox" name="hobbies" value="Music">
+                                Music
+                            </label>
+
+                            <label class="option">
+                                <input type="checkbox" name="hobbies" value="Sports">
+                                Sports
+                            </label>
+
+                            <label class="option">
+                                <input type="checkbox" name="hobbies" value="Travel">
+                                Travel
+                            </label>
+
+                            <label class="option">
+                                <input type="checkbox" name="hobbies" value="Movies">
+                                Movies
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="incomeSource">Source of Income</label>
+                        <select id="incomeSource">
+                            <option value="Employed">Employed</option>
+                            <option value="Self-employed">Self-employed</option>
+                            <option value="Unemployed">Unemployed</option>
+                            <option value="Student">Student</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="income">Income</label>
+                        <div class="income-control">
+                            <input type="range" id="income"
+                                   min="20" max="200" step="10" value="20">
+                            <span id="incomeValue">20K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="photo">Upload Profile Picture</label>
+                        <input type="file" id="photo" accept="image/*">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" value="18"
+                               min="1" max="120">
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio" rows="4"></textarea>
+                </div>
+
+            </div>
+
+            <div class="form-footer">
+                <button type="submit">Create</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        const income = document.getElementById("income");
+        const incomeValue = document.getElementById("incomeValue");
+
+        income.addEventListener("input", function () {
+            incomeValue.textContent = this.value + "K";
+        });
+
+        document.getElementById("accountForm")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const password =
+                    document.getElementById("password").value;
+
+                const confirmPassword =
+                    document.getElementById("confirmPassword").value;
+
+                if (password !== confirmPassword) {
+                    alert("Password dan Confirm Password tidak sama!");
+                    return;
+                }
+
+                alert("Account berhasil dibuat!");
+            });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+
+  <style>
+    body {
+      background-color: #f4f7f9;
+      font-family: "Times New Roman", Times, serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container             {
+      width: 356px;
+      margin: 0 auto;
+      padding: 10px 20px 8px;
+      background-color: #ffe4e1;
+      border: 1px solid #d5d5d5;
+      box-sizing: content-box;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 17px;
+      margin-bottom: 20px;
+      white-space: nowrap;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    td {
+      padding: 6px 4px;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+
+    td:first-child {
+      width: 91px;
+      white-space: nowrap;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      height: 16px;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      padding: 2px;
+    }
+
+    .input-biasa {
+      width: 100%;
+    }
+
+    .nama input {
+      width: 43%;
+    }
+
+    .tanggal input {
+      width: 32px;
+    }
+
+    .tanggal .tahun {
+      width: 51px;
+    }
+
+    .telepon .kode {
+      width: 25px;
+    }
+
+    .telepon .nomor {
+      width: 176px;
+    }
+
+    .gender input {
+      margin: 0 2px 0 0;
+      vertical-align: middle;
+    }
+
+    .department {
+      white-space: nowrap;
+    }
+
+    .department input {
+      margin: 0 2px 0 0;
+      vertical-align: middle;
+    }
+
+    select {
+      width: 100%;
+      height: 17px;
+      font-size: 9px;
+      padding: 0;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      font-size: 9px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 46px;
+      box-sizing: border-box;
+      resize: none;
+      font-size: 10px;
+    }
+
+    .tombol {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    input[type="submit"] {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 10px;
+      padding: 1px 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h2>Student Registration Form</h2>
+
+    <form>
+
+      <table>
+
+        <tr>
+          <td>Roll no. :</td>
+          <td>
+            <input type="text" name="roll" class="input-biasa">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Student name :</td>
+          <td class="nama">
+            <input type="text" name="first_name" placeholder="First Name">
+            -
+            <input type="text" name="last_name" placeholder="Last Name">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Father's name :</td>
+          <td>
+            <input type="text" name="father_name" class="input-biasa">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Date of birth :</td>
+          <td class="tanggal">
+            <input type="text" name="day" placeholder="Day">
+            -
+            <input type="text" name="month" placeholder="Month">
+            -
+            <input type="text" name="year" class="tahun" placeholder="Year">
+            <i>(DD-MM-YYYY)</i>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Mobile no. :</td>
+          <td class="telepon">
+            <input type="text" class="kode" value="+91" readonly>
+            -
+            <input type="text" name="mobile" class="nomor">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Email id :</td>
+          <td>
+            <input type="email" name="email" class="input-biasa">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Password :</td>
+          <td>
+            <input type="password" name="password" class="input-biasa">
+          </td>
+        </tr>
+        <tr>
+          <td>Gender :</td>
+          <td class="gender">
+            <input type="radio" name="gender" value="Male"> Male
+
+            <input type="radio" name="gender" value="Female"> Female
+          </td>
+        </tr>
+
+        <tr>
+          <td>Department :</td>
+          <td class="department">
+            <input type="checkbox" name="department" value="CSE"> CSE
+
+            <input type="checkbox" name="department" value="IT"> IT
+
+            <input type="checkbox" name="department" value="ECE"> ECE
+
+            <input type="checkbox" name="department" value="Civil"> Civil
+
+            <input type="checkbox" name="department" value="Mech"> Mech
+          </td>
+        </tr>
+
+        <tr>
+          <td>Course :</td>
+          <td>
+            <select name="course">
+              <option value="">
+                ---------------- Select Current Course's ----------------
+              </option>
+              <option value="HTML">HTML</option>
+              <option value="CSS">CSS</option>
+              <option value="PHP">PHP</option>
+              <option value="Java">Java</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Student photo :</td>
+          <td>
+            <input type="file" name="photo">
+          </td>
+        </tr>
+
+        <tr>
+          <td>City :</td>
+          <td>
+            <input type="text" name="city" class="input-biasa">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Address :</td>
+          <td>
+            <textarea name="address"></textarea>
+          </td>
+        </tr>
+
+      </table>
+
+      <div class="tombol">
+        <input type="submit" value="Register">
+      </div>
+
+    </form>
+
+  </div>
+
+</body>
+
+</html>
